@@ -1,7 +1,7 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2020-04-23T05:29:20.396Z",
+  "__export_date": "2020-04-23T07:57:43.915Z",
   "__export_source": "insomnia.desktop.app:v7.1.1",
   "resources": [
     {
@@ -86,6 +86,72 @@
       "_type": "workspace"
     },
     {
+      "_id": "req_da71fbdc82c443f2b452550868ee3de8",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {},
+      "created": 1587627514006,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_7103e2ccb2e648f98854089dcb1b2de7",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_935141be331746eda482199940919328",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1587557827047,
+      "method": "GET",
+      "modified": 1587627726088,
+      "name": "Customers (Proxy)",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_d0aaff2e9f1f42e18007eeab6b9af3b4",
+          "name": "page",
+          "value": "1"
+        },
+        {
+          "description": "",
+          "id": "pair_1a82858774414c9c8e76ca0889c99a1f",
+          "name": "page_size",
+          "value": "10"
+        },
+        {
+          "description": "",
+          "id": "pair_60c97740417b4a379a2a6b57053b5385",
+          "name": "website_id",
+          "value": "{{websiteId}}"
+        },
+        {
+          "description": "",
+          "id": "pair_f67d0a4d36904453b1a350ae6f44f18e",
+          "name": "only_reg",
+          "value": "true"
+        }
+      ],
+      "parentId": "fld_95123e6607d94db9aa27677601c27790",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/emarsys/customers",
+      "_type": "request"
+    },
+    {
       "_id": "req_d9b22f4bafe14a269ea164918a0c8e57",
       "authentication": { "token": "{{ token  }}", "type": "bearer" },
       "body": {},
@@ -122,35 +188,47 @@
       "_type": "request"
     },
     {
-      "_id": "req_3710910fb321460eaaa586c889946727",
-      "authentication": { "token": "{{ token  }}", "type": "bearer" },
+      "_id": "req_b648c083de7942218b89e69eef4dca28",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
       "body": {},
-      "created": 1587559102332,
+      "created": 1587627765486,
       "description": "",
-      "headers": [],
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_43f3603cdaee44358be9d5b5fa405927",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_5bf4dd3921904bc1979329b027b5f6eb",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
       "isPrivate": false,
       "metaSortKey": -1587557827022,
       "method": "GET",
-      "modified": 1587559169469,
-      "name": "Categories",
+      "modified": 1587627824046,
+      "name": "Subscribers (Proxy)",
       "parameters": [
         {
           "description": "",
-          "id": "pair_f7a55433e44d4323922f680c06780d97",
+          "id": "pair_83e6787a5c904375ade10de11c3a795f",
           "name": "page",
           "value": "1"
         },
         {
           "description": "",
-          "id": "pair_66d3e69ba8494d14be15e8474182a313",
-          "name": "page_size",
+          "id": "pair_60fcd12df9fa4d6aa602a608c3b4bf2c",
+          "name": "limit",
           "value": "100"
-        },
-        {
-          "description": "",
-          "id": "pair_564901e681c54415881a24fe9feb3870",
-          "name": "store_id",
-          "value": "{{storeIds}}"
         }
       ],
       "parentId": "fld_95123e6607d94db9aa27677601c27790",
@@ -160,7 +238,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ protocol  }}://{{ hostname  }}/rest/V1/emarsys/categories",
+      "url": "{{ proxy_url  }}/rest/V1/emarsys/subscriptions",
       "_type": "request"
     },
     {
@@ -206,6 +284,66 @@
       "_type": "request"
     },
     {
+      "_id": "req_f32afe1532c0449dab258fe677c3001d",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {},
+      "created": 1587627836164,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_d06eced408f440cb95dfd4d534057c37",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_382ae1113bbe483ca59bb1217e48374e",
+          "name": "X-Proxy-Authorization",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1587557826997,
+      "method": "GET",
+      "modified": 1587628002338,
+      "name": "Products (Proxy)",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_b0954651e076498590c27932dfd93874",
+          "name": "page",
+          "value": "1"
+        },
+        {
+          "description": "",
+          "id": "pair_237a5ec8909146128513ec17110862af",
+          "name": "page_size",
+          "value": "10"
+        },
+        {
+          "description": "",
+          "id": "pair_4189b60112c34015b84ef656bfb55e37",
+          "name": "store_id",
+          "value": "{{ storeIds }}"
+        }
+      ],
+      "parentId": "fld_95123e6607d94db9aa27677601c27790",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/emarsys/products",
+      "_type": "request"
+    },
+    {
       "_id": "req_33ee388575db4a81977466a773b3c18e",
       "authentication": { "token": "{{ token  }}", "type": "bearer" },
       "body": {},
@@ -245,6 +383,66 @@
       "settingSendCookies": true,
       "settingStoreCookies": true,
       "url": "{{ protocol  }}://{{ hostname  }}/rest/V1/emarsys/categories",
+      "_type": "request"
+    },
+    {
+      "_id": "req_026dd56bc43d4849bcccdf956e8fba5b",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {},
+      "created": 1587627966086,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_c8a0f53fa23044199575fc358b70cb95",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_f78485dff3174bdaa444b20916c07c87",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1587557826972,
+      "method": "GET",
+      "modified": 1587628020536,
+      "name": "Categories (Proxy)",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_b0954651e076498590c27932dfd93874",
+          "name": "page",
+          "value": "1"
+        },
+        {
+          "description": "",
+          "id": "pair_237a5ec8909146128513ec17110862af",
+          "name": "page_size",
+          "value": "10"
+        },
+        {
+          "description": "",
+          "id": "pair_4189b60112c34015b84ef656bfb55e37",
+          "name": "store_id",
+          "value": "{{ storeIds }}"
+        }
+      ],
+      "parentId": "fld_95123e6607d94db9aa27677601c27790",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/emarsys/categories",
       "_type": "request"
     },
     {
@@ -296,6 +494,72 @@
       "_type": "request"
     },
     {
+      "_id": "req_fae728ecb3a746dd8808d0ea4680f23c",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {},
+      "created": 1587628032300,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_e03a6ef03955483786bc77eacb08e2c1",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_4fcb4a76dfd84c798f48f2eca5f406a5",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1587557826947,
+      "method": "GET",
+      "modified": 1587628082802,
+      "name": "Orders Since ID (Proxy)",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_8a6e2060d0d64deea5a8652c550e2279",
+          "name": "page",
+          "value": "1"
+        },
+        {
+          "description": "",
+          "id": "pair_99a82353011846c1a1554fecc599b691",
+          "name": "page_size",
+          "value": "100"
+        },
+        {
+          "description": "",
+          "id": "pair_8067d72b94e6469fac32211990ef0a82",
+          "name": "since_id",
+          "value": "0"
+        },
+        {
+          "description": "",
+          "id": "pair_79723e82c1184507b485b176223c28b5",
+          "name": "store_id",
+          "value": "{{storeIds}}"
+        }
+      ],
+      "parentId": "fld_95123e6607d94db9aa27677601c27790",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/emarsys/orders",
+      "_type": "request"
+    },
+    {
       "_id": "req_8dd49aa11aa6494e8b0568fb71177edc",
       "authentication": { "token": "{{ token  }}", "type": "bearer" },
       "body": {},
@@ -344,6 +608,72 @@
       "_type": "request"
     },
     {
+      "_id": "req_a161a21ce98a4a9c983efbc5209f72ae",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {},
+      "created": 1587628098795,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_a1198bf51eeb4baf9a1585c5595f1794",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_66609768668a48939908b20bc9ff6a1a",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1587557826922,
+      "method": "GET",
+      "modified": 1587628133887,
+      "name": "System Info (Proxy)",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_8a6e2060d0d64deea5a8652c550e2279",
+          "name": "page",
+          "value": "1"
+        },
+        {
+          "description": "",
+          "id": "pair_99a82353011846c1a1554fecc599b691",
+          "name": "page_size",
+          "value": "100"
+        },
+        {
+          "description": "",
+          "id": "pair_8067d72b94e6469fac32211990ef0a82",
+          "name": "since_id",
+          "value": "0"
+        },
+        {
+          "description": "",
+          "id": "pair_79723e82c1184507b485b176223c28b5",
+          "name": "store_id",
+          "value": "{{storeIds}}"
+        }
+      ],
+      "parentId": "fld_95123e6607d94db9aa27677601c27790",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/emarsys/system",
+      "_type": "request"
+    },
+    {
       "_id": "req_c612ea6cdfe3457da08fa02ec1c8301a",
       "authentication": { "token": "{{ token  }}", "type": "bearer" },
       "body": {
@@ -376,6 +706,55 @@
       "_type": "request"
     },
     {
+      "_id": "req_909057c873354fd38d10c19d5e1e78e8",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"sku\": [\n\t\t\"...\",\n\t\t\"...\"\n\t]\n}"
+      },
+      "created": 1587628153557,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_fed4121a889e4101b290363423c2c6f6",
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "description": "",
+          "id": "pair_20ada415eb404814bf18e1e1cb37ba93",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_a5276ed1ec914f91a2507bdd06e2436e",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1586813103061.375,
+      "method": "POST",
+      "modified": 1587628191640,
+      "name": "Inventory For Products (Proxy)",
+      "parameters": [],
+      "parentId": "fld_95123e6607d94db9aa27677601c27790",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/emarsys/inventory/items",
+      "_type": "request"
+    },
+    {
       "_id": "req_556b8f5e7d1747638fa614fdc7e39c52",
       "authentication": { "token": "{{ token  }}", "type": "bearer" },
       "body": {
@@ -405,6 +784,55 @@
       "settingSendCookies": true,
       "settingStoreCookies": true,
       "url": "{{ protocol  }}://{{ hostname  }}/rest/V1/emarsys/events",
+      "_type": "request"
+    },
+    {
+      "_id": "req_78aac9f0068144788043a2999bf7be4e",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"since_id\": 0,\n\t\"page_size\": 5\n}"
+      },
+      "created": 1587628206438,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_fed4121a889e4101b290363423c2c6f6",
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "description": "",
+          "id": "pair_df95cb12da584de4a97693ba97d39d4a",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_c17f297221c24f71a47bb41015da1fce",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1585323655365.125,
+      "method": "POST",
+      "modified": 1587628252030,
+      "name": "Events Since ID (Proxy)",
+      "parameters": [],
+      "parentId": "fld_95123e6607d94db9aa27677601c27790",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/emarsys/events",
       "_type": "request"
     },
     {
@@ -443,6 +871,47 @@
       "_type": "request_group"
     },
     {
+      "_id": "req_d402a04a6bd94834b946bd49471288b8",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {},
+      "created": 1587628268163,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_c9e15367271b456eae25ce6fb0dfadb6",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_c3c04eb029044847ab9539b63a63c8d8",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1583848065033.5,
+      "method": "GET",
+      "modified": 1587628301380,
+      "name": "Products (Proxy)",
+      "parameters": [],
+      "parentId": "fld_8da9d20c44824fc6af65be1155c67c5f",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/products/{% prompt 'SKU', 'SKU', '24-MB01', '', false, true %}",
+      "_type": "request"
+    },
+    {
       "_id": "req_158e47c5c11e411785a2865564ebc3e2",
       "authentication": { "token": "{{ token  }}", "type": "bearer" },
       "body": {},
@@ -463,6 +932,47 @@
       "settingSendCookies": true,
       "settingStoreCookies": true,
       "url": "{{ protocol  }}://{{ hostname  }}/rest/V1/inventory/sources",
+      "_type": "request"
+    },
+    {
+      "_id": "req_046832c808254511bca69643863cd172",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {},
+      "created": 1587628320986,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_6c210336294e48fb817ed661bf7d9305",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_26b54302d55a465bb6c30bf62d213f31",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1583848065008.5,
+      "method": "GET",
+      "modified": 1587628348361,
+      "name": "Inventory Sources (Proxy)",
+      "parameters": [],
+      "parentId": "fld_8da9d20c44824fc6af65be1155c67c5f",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/inventory/sources",
       "_type": "request"
     },
     {
@@ -489,6 +999,47 @@
       "_type": "request"
     },
     {
+      "_id": "req_42b49016f68d45a1be154e929b44a26c",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {},
+      "created": 1587628360207,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_a7985281fedd46198ae05ebcc1a3cedc",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_209b541fd70c4fe0bd5a0ca6ea1896cb",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1583848064983.5,
+      "method": "GET",
+      "modified": 1587628391324,
+      "name": "Store Configs (Proxy)",
+      "parameters": [],
+      "parentId": "fld_8da9d20c44824fc6af65be1155c67c5f",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/store/storeConfigs",
+      "_type": "request"
+    },
+    {
       "_id": "req_228fb0473c2d4c2986b777d55d52f130",
       "authentication": { "token": "{{ token  }}", "type": "bearer" },
       "body": {},
@@ -509,6 +1060,47 @@
       "settingSendCookies": true,
       "settingStoreCookies": true,
       "url": "{{ protocol  }}://{{ hostname  }}/rest/V1/store/storeViews",
+      "_type": "request"
+    },
+    {
+      "_id": "req_acf8ae9583ec4303ba63d54014730686",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {},
+      "created": 1587628510049,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_ea1aa3799af746988834338e460082e6",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_5ebd1d6e847647cc85f2d96397f09362",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1583848064964.75,
+      "method": "GET",
+      "modified": 1587628535283,
+      "name": "Store Views (Proxy)",
+      "parameters": [],
+      "parentId": "fld_8da9d20c44824fc6af65be1155c67c5f",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/store/storeViews",
       "_type": "request"
     },
     {
@@ -535,22 +1127,75 @@
       "_type": "request"
     },
     {
+      "_id": "req_76a2cfd3d44548b5a52136f402eff1db",
+      "authentication": {
+        "disabled": false,
+        "password": "{{ proxy_password  }}",
+        "type": "basic",
+        "username": "{{ proxy_user  }}"
+      },
+      "body": {},
+      "created": 1587628547226,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_3194182c85174851bca3d9bae6b79f1d",
+          "name": "X-Proxy-Base-Url",
+          "value": "{{ protocol  }}://{{ hostname  }}"
+        },
+        {
+          "description": "",
+          "id": "pair_34d5863c334e4cc68a72b657aa9fc646",
+          "name": "X-Proxy-Authorization",
+          "value": "Bearer {{ token  }}"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1583847086834.25,
+      "method": "GET",
+      "modified": 1587628580199,
+      "name": "Websites (Proxy)",
+      "parameters": [],
+      "parentId": "fld_8da9d20c44824fc6af65be1155c67c5f",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ proxy_url  }}/rest/V1/store/websites",
+      "_type": "request"
+    },
+    {
       "_id": "env_d97a80c969c38ec0ce37cb99e83639afd7958a74",
       "color": null,
       "created": 1587554966798,
       "data": {
         "hostname": "...",
         "protocol": "https",
+        "proxy_password": "...",
+        "proxy_url": "...",
+        "proxy_user": "...",
         "storeIds": "0,1",
         "token": "...",
         "websiteId": "1"
       },
       "dataPropertyOrder": {
-        "&": ["protocol", "hostname", "token", "websiteId", "storeIds"]
+        "&": [
+          "protocol",
+          "hostname",
+          "token",
+          "websiteId",
+          "storeIds",
+          "proxy_url",
+          "proxy_user",
+          "proxy_password"
+        ]
       },
       "isPrivate": false,
       "metaSortKey": 1587554966798,
-      "modified": 1587618442557,
+      "modified": 1587627557489,
       "name": "Base Environment",
       "parentId": "wrk_a3069cd7c9a04ba4b26fcba95ddb2042",
       "_type": "environment"
@@ -559,7 +1204,7 @@
       "_id": "jar_d97a80c969c38ec0ce37cb99e83639afd7958a74",
       "cookies": [],
       "created": 1587554966811,
-      "modified": 1587619738823,
+      "modified": 1587628648507,
       "name": "Default Jar",
       "parentId": "wrk_a3069cd7c9a04ba4b26fcba95ddb2042",
       "_type": "cookie_jar"
