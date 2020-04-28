@@ -1,7 +1,7 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2020-04-23T08:07:11.082Z",
+  "__export_date": "2020-04-28T13:06:45.409Z",
   "__export_source": "insomnia.desktop.app:v7.1.1",
   "resources": [
     {
@@ -569,34 +569,9 @@
       "isPrivate": false,
       "metaSortKey": -1587557826934.5,
       "method": "GET",
-      "modified": 1587618560909,
+      "modified": 1588079152838,
       "name": "System Info",
-      "parameters": [
-        {
-          "description": "",
-          "id": "pair_8a6e2060d0d64deea5a8652c550e2279",
-          "name": "page",
-          "value": "1"
-        },
-        {
-          "description": "",
-          "id": "pair_99a82353011846c1a1554fecc599b691",
-          "name": "page_size",
-          "value": "100"
-        },
-        {
-          "description": "",
-          "id": "pair_8067d72b94e6469fac32211990ef0a82",
-          "name": "since_id",
-          "value": "0"
-        },
-        {
-          "description": "",
-          "id": "pair_79723e82c1184507b485b176223c28b5",
-          "name": "store_id",
-          "value": "{{storeIds}}"
-        }
-      ],
+      "parameters": [],
       "parentId": "fld_95123e6607d94db9aa27677601c27790",
       "settingDisableRenderRequestBody": false,
       "settingEncodeUrl": true,
@@ -635,34 +610,9 @@
       "isPrivate": false,
       "metaSortKey": -1587557826922,
       "method": "GET",
-      "modified": 1587628133887,
+      "modified": 1588079162262,
       "name": "System Info (Proxy)",
-      "parameters": [
-        {
-          "description": "",
-          "id": "pair_8a6e2060d0d64deea5a8652c550e2279",
-          "name": "page",
-          "value": "1"
-        },
-        {
-          "description": "",
-          "id": "pair_99a82353011846c1a1554fecc599b691",
-          "name": "page_size",
-          "value": "100"
-        },
-        {
-          "description": "",
-          "id": "pair_8067d72b94e6469fac32211990ef0a82",
-          "name": "since_id",
-          "value": "0"
-        },
-        {
-          "description": "",
-          "id": "pair_79723e82c1184507b485b176223c28b5",
-          "name": "store_id",
-          "value": "{{storeIds}}"
-        }
-      ],
+      "parameters": [],
       "parentId": "fld_95123e6607d94db9aa27677601c27790",
       "settingDisableRenderRequestBody": false,
       "settingEncodeUrl": true,
