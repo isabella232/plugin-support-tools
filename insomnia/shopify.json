@@ -1,0 +1,80 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-01-27T05:44:56.869Z",
+  "__export_source": "insomnia.desktop.app:v2020.5.2",
+  "resources": [
+    {
+      "_id": "req_c7eeee25f14247248d0cd78538955397",
+      "parentId": "wrk_e29a65909d6e4b90a85684fbc7d9a40a",
+      "modified": 1611726220623,
+      "created": 1611725910276,
+      "url": "{{ _.hostname }}/admin/api/2021-01/orders/{% prompt 'Order ID', 'Order ID', '', '', false, true %}.json",
+      "name": "Order",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "X-Shopify-Access-Token",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8ee0eebddc0d469a80847fd9ad4b2e8d"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1611725910276,
+      "isPrivate": false,
+      "settingStoreCookies": false,
+      "settingSendCookies": false,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_e29a65909d6e4b90a85684fbc7d9a40a",
+      "parentId": null,
+      "modified": 1611725252715,
+      "created": 1611725252715,
+      "name": "Shopify",
+      "description": "",
+      "scope": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_27449b026baf86354684705d039a08e1013ee885",
+      "parentId": "wrk_e29a65909d6e4b90a85684fbc7d9a40a",
+      "modified": 1611725997335,
+      "created": 1611725252793,
+      "name": "Base Environment",
+      "data": { "hostname": "https://example.myshopify.com", "token": "..." },
+      "dataPropertyOrder": { "&": ["hostname", "token"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1611725252793,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_27449b026baf86354684705d039a08e1013ee885",
+      "parentId": "wrk_e29a65909d6e4b90a85684fbc7d9a40a",
+      "modified": 1611725252801,
+      "created": 1611725252801,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_15379888965440d187e24be25ce798ce",
+      "parentId": "wrk_e29a65909d6e4b90a85684fbc7d9a40a",
+      "modified": 1611725252719,
+      "created": 1611725252719,
+      "fileName": "Shopify",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}
