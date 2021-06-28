@@ -3,7 +3,7 @@ id,parent_id,sku,name,price,type,thumbnail
 1001,1000,SDWC-0-ORANGE,Small Drone With Camera Orange,110,VARIANT,https://cdn.shopify.com/s/files/1/0129/7658/6816/products/stunt-drone.jpg?v=1624868392
 1002,1000,SDWC-0-BLACK,Small Drone With Camera Black,110,VARIANT,https://cdn.shopify.com/s/files/1/0129/7658/6816/products/mini-drone-quadrocopter.jpg?v=1624868405
 2000,,SOCKS-0,Socks,10,PARENT,https://cdn.shopify.com/s/files/1/0129/7658/6816/products/legs-crossed-hot-dog-socks.jpg?v=1624869280
-2001,1000,SOCKS-0-HOT-DOG,Hot Dog Socks,10,VARIANT,https://cdn.shopify.com/s/files/1/0129/7658/6816/products/hotdog-socks.jpg?v=1624869280
-2002,1000,SDWC-0-PUG,Pug Dog Socks,10,VARIANT,https://cdn.shopify.com/s/files/1/0129/7658/6816/products/pug-dog-socks_33f58c08-17c5-4357-b037-e5aed31d3f0f.jpg?v=1624869298
-2003,1000,SDWC-0-STRIPES,Grey And White Stripe Socks,10,VARIANT,https://cdn.shopify.com/s/files/1/0129/7658/6816/products/grey-and-white-stripe-socks_02733c54-874c-4a2d-bc78-c88b70ddd6d8.jpg?v=1624869311
+2001,2000,SOCKS-0-HOT-DOG,Hot Dog Socks,10,VARIANT,https://cdn.shopify.com/s/files/1/0129/7658/6816/products/hotdog-socks.jpg?v=1624869280
+2002,2000,SDWC-0-PUG,Pug Dog Socks,10,VARIANT,https://cdn.shopify.com/s/files/1/0129/7658/6816/products/pug-dog-socks_33f58c08-17c5-4357-b037-e5aed31d3f0f.jpg?v=1624869298
+2003,2000,SDWC-0-STRIPES,Grey And White Stripe Socks,10,VARIANT,https://cdn.shopify.com/s/files/1/0129/7658/6816/products/grey-and-white-stripe-socks_02733c54-874c-4a2d-bc78-c88b70ddd6d8.jpg?v=1624869311
 3000,,EVGA-RTX-3080,EVGA GeForce RTX 3080 FTW3 ULTRA GAMING 10GB GDDR6X,99999999999,PARENT,https://cdn.shopify.com/s/files/1/0129/7658/6816/products/730371342.evga-geforce-rtx-3080-ftw3-ultra-gaming-10gb-gddr6x-10g-p5-3897-kr.jpg?v=1624869830
