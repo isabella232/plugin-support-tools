@@ -1,0 +1,9 @@
+productid,originalprice,sellingprice,msrp,surchargetype,surchargevalue
+1000,100,100,100,,
+1001,,,100,ABSOLUTE,0
+1002,,,100,ABSOLUTE,0
+2000,10,10,10,,
+2001,,,10,ABSOLUTE,10
+2002,,,20,ABSOLUTE,20
+2003,,,30,ABSOLUTE,30
+3000,1000,5000,1000,,
