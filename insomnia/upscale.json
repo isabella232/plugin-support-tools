@@ -1,0 +1,260 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-06-28T08:02:33.081Z",
+  "__export_source": "insomnia.desktop.app:v2021.3.0",
+  "resources": [
+    {
+      "_id": "req_7262f1d91530403292a53a2d7598d93c",
+      "parentId": "fld_e7aa5a32def94ebc88c7ead06b330dd6",
+      "modified": 1624866772216,
+      "created": 1624864912145,
+      "url": "{{ _.baseUrl }}/consumer/customer-service/customers",
+      "name": "List",
+      "description": "https://help.sap.com/viewer/175bd65ec40b459d84c7d55d5d6d0f64/SHIP/en-US/40fe5eab9169429a81fc1d8dfcb816f6.html\n\nSwagger:\n{{ _.baseUrl }}/customer-service/api/index.html",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "oauth2",
+        "grantType": "client_credentials",
+        "accessTokenUrl": " {{ _.baseUrl }}/oauth2/token",
+        "clientId": "{{ _.clientId }}",
+        "clientSecret": "{{ _.clientSecret }}"
+      },
+      "metaSortKey": -1624865982272,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_e7aa5a32def94ebc88c7ead06b330dd6",
+      "parentId": "wrk_daa080c323a7438bacf1d28b6907e62d",
+      "modified": 1624866159975,
+      "created": 1624866159975,
+      "name": "Customers",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1624866159975,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_daa080c323a7438bacf1d28b6907e62d",
+      "parentId": null,
+      "modified": 1624864888254,
+      "created": 1624864888254,
+      "name": "Upscale",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_38444eecfcd740ca8a221ec3c0c7d3c9",
+      "parentId": "fld_e7aa5a32def94ebc88c7ead06b330dd6",
+      "modified": 1624866782649,
+      "created": 1624866120621,
+      "url": "{{ _.baseUrl }}/consumer/customer-service/customers",
+      "name": "Create",
+      "description": "https://help.sap.com/viewer/175bd65ec40b459d84c7d55d5d6d0f64/SHIP/en-US/40fe5eab9169429a81fc1d8dfcb816f6.html\n\nSwagger:\n{{ _.baseUrl }}/customer-service/api/index.html",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"test-customer@test.com\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_7c4a8de47cc94235878b72986f6a8b3c"
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "grantType": "client_credentials",
+        "accessTokenUrl": " {{ _.baseUrl }}/oauth2/token",
+        "clientId": "{{ _.clientId }}",
+        "clientSecret": "{{ _.clientSecret }}"
+      },
+      "metaSortKey": -1624865982222,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_6ecc99cd28064260bfda998fe449543e",
+      "parentId": "fld_e7aa5a32def94ebc88c7ead06b330dd6",
+      "modified": 1624867308924,
+      "created": 1624866202356,
+      "url": "{{ _.baseUrl }}/consumer/customer-service/customers/{% prompt 'Retrieves the details for a specific customer by providing the customer\\'s ID in the request.', 'The customer\\'s identifier (customerId):', '', '', false, true %}",
+      "name": "Retrieve a customer",
+      "description": "https://help.sap.com/viewer/175bd65ec40b459d84c7d55d5d6d0f64/SHIP/en-US/40fe5eab9169429a81fc1d8dfcb816f6.html\n\nSwagger:\n{{ _.baseUrl }}/customer-service/api/index.html",
+      "method": "GET",
+      "body": { "mimeType": "application/json", "text": "" },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_7c4a8de47cc94235878b72986f6a8b3c"
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "grantType": "client_credentials",
+        "accessTokenUrl": " {{ _.baseUrl }}/oauth2/token",
+        "clientId": "{{ _.clientId }}",
+        "clientSecret": "{{ _.clientSecret }}"
+      },
+      "metaSortKey": -1624782486078.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_7edde93de08243c3a7c165ed71f3d763",
+      "parentId": "fld_c24858818dc84ff8a5f4d8a9ed8c82fc",
+      "modified": 1624866598483,
+      "created": 1624865616965,
+      "url": "{{ _.baseUrl }}/product-content/products",
+      "name": "Products",
+      "description": "https://help.sap.com/viewer/175bd65ec40b459d84c7d55d5d6d0f64/SHIP/en-US/ebed7bb976d041f79572f210ba426f74.html\n\nSwagger:\n{{ _.baseUrl }}/product-content/api/index.html",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "pageNumber",
+          "value": "1",
+          "description": "",
+          "id": "pair_1c54b10c43d849be98f8b1c85ff280b9"
+        },
+        {
+          "name": "pageSize",
+          "value": "20",
+          "description": "",
+          "id": "pair_f739ef230b0f4838b7f97c0d8a275070"
+        },
+        {
+          "name": "expand",
+          "value": "attributeSets,productCategoryIds,fulfillmentLocationIds,variantSummary,collectionIds,seo,parent.collectionIds,badges,childBadges,price.variantDetails",
+          "description": "",
+          "id": "pair_25e1d4f507d24dee8ca09b8d79d77de2"
+        },
+        {
+          "name": "active",
+          "value": "true",
+          "description": "",
+          "id": "pair_1cdacbd2744e4bedb4ae4a7205e2391d",
+          "disabled": true
+        },
+        {
+          "name": "categoryIdsMode",
+          "value": "IDS",
+          "description": "",
+          "id": "pair_792f78977762488a9ddd98cb3dec1f82",
+          "disabled": true
+        },
+        {
+          "name": "published",
+          "value": "true",
+          "description": "",
+          "id": "pair_275d18115b874029afba508f2fb231b7",
+          "disabled": true
+        },
+        {
+          "name": "sku",
+          "value": "",
+          "description": "",
+          "id": "pair_149f9b73c5484d9aa6bd6b9011d3fabe",
+          "disabled": true
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept-Language",
+          "value": "en-US",
+          "description": "",
+          "id": "pair_ea9e9b5e0d934544ab8b0946690bf8c0",
+          "disabled": true
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "grantType": "client_credentials",
+        "accessTokenUrl": " {{ _.baseUrl }}/oauth2/token",
+        "clientId": "{{ _.clientId }}",
+        "clientSecret": "{{ _.clientSecret }}"
+      },
+      "metaSortKey": -1624793023032.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_c24858818dc84ff8a5f4d8a9ed8c82fc",
+      "parentId": "wrk_daa080c323a7438bacf1d28b6907e62d",
+      "modified": 1624866593428,
+      "created": 1624866578754,
+      "name": "Products",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1624793023082.5,
+      "_type": "request_group"
+    },
+    {
+      "_id": "env_bdd889f053edb35c433d2f01adcbdf870ba6cab7",
+      "parentId": "wrk_daa080c323a7438bacf1d28b6907e62d",
+      "modified": 1624866707553,
+      "created": 1624864888618,
+      "name": "Base Environment",
+      "data": { "baseUrl": "...", "clientId": "...", "clientSecret": "..." },
+      "dataPropertyOrder": { "&": ["baseUrl", "clientId", "clientSecret"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1624864888618,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_bdd889f053edb35c433d2f01adcbdf870ba6cab7",
+      "parentId": "wrk_daa080c323a7438bacf1d28b6907e62d",
+      "modified": 1624864888631,
+      "created": 1624864888631,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_c494a1fe459341dfb155deabf76b3e7f",
+      "parentId": "wrk_daa080c323a7438bacf1d28b6907e62d",
+      "modified": 1624864888261,
+      "created": 1624864888261,
+      "fileName": "Upscale",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}
