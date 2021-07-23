@@ -1,33 +1,57 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2021-01-27T05:44:56.869Z",
-  "__export_source": "insomnia.desktop.app:v2020.5.2",
+  "__export_date": "2021-07-22T15:44:45.458Z",
+  "__export_source": "insomnia.desktop.app:v2021.4.1",
   "resources": [
     {
-      "_id": "req_c7eeee25f14247248d0cd78538955397",
-      "parentId": "wrk_e29a65909d6e4b90a85684fbc7d9a40a",
-      "modified": 1611726220623,
-      "created": 1611725910276,
-      "url": "{{ _.hostname }}/admin/api/2021-01/orders/{% prompt 'Order ID', 'Order ID', '', '', false, true %}.json",
-      "name": "Order",
-      "description": "",
+      "_id": "req_cd64a08074c54550b32576caa98b88ca",
+      "parentId": "fld_b9fc6dc6ec9f486d8fb34bba5cc59df1",
+      "modified": 1626343786388,
+      "created": 1615570830637,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/customers.json",
+      "name": "Retrieve a list of customers",
+      "description": "Options:\n- ids\n\nRestrict results to customers specified by a comma-separated list of IDs.\n\n- since_id\n\nRestrict results to those after the specified ID.\n\n- created_at_min\n\nShow customers created after a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- created_at_max\n\nShow customers created before a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- updated_at_min\n\nShow customers last updated after a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- updated_at_max\n\nShow customers last updated before a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- limit\n\nThe maximum number of results to show.\n\n(default: 50, maximum: 250)\n\n- fields\n\nShow only certain fields, specified by a comma-separated list of field names.",
       "method": "GET",
       "body": {},
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "1145150013530 ",
+          "description": "",
+          "id": "pair_d012903db5c04e23bbd53bd4135a8e4c",
+          "disabled": true,
+          "type": "text",
+          "multiline": "text/plain"
+        },
+        {
+          "name": "limit",
+          "value": "250",
+          "description": "",
+          "id": "pair_ecc74c1964de4711959a54d11bcc3362",
+          "disabled": false
+        },
+        {
+          "name": "page_info",
+          "value": "eyJsYXN0X2lkIjo1MDU5OTU0ODY4MjU4LCJsYXN0X3ZhbHVlIjoxNjE3MjExNDAyMDAwLCJkaXJlY3Rpb24iOiJuZXh0In0",
+          "description": "",
+          "id": "pair_d3026b80270d4b4db4073b0aad940f1e",
+          "disabled": true
+        }
+      ],
       "headers": [
         {
-          "name": "X-Shopify-Access-Token",
+          "name": "{{ _.auth_header }}",
           "value": "{{ _.token }}",
           "description": "",
-          "id": "pair_8ee0eebddc0d469a80847fd9ad4b2e8d"
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
         }
       ],
       "authentication": {},
-      "metaSortKey": -1611725910276,
+      "metaSortKey": -1615562339443.25,
       "isPrivate": false,
-      "settingStoreCookies": false,
-      "settingSendCookies": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
       "settingDisableRenderRequestBody": false,
       "settingEncodeUrl": true,
       "settingRebuildPath": true,
@@ -35,43 +59,1304 @@
       "_type": "request"
     },
     {
-      "_id": "wrk_e29a65909d6e4b90a85684fbc7d9a40a",
-      "parentId": null,
-      "modified": 1611725252715,
-      "created": 1611725252715,
-      "name": "Shopify",
+      "_id": "fld_b9fc6dc6ec9f486d8fb34bba5cc59df1",
+      "parentId": "wrk_34e0a9ea83d949e78e8e43421dbe3987",
+      "modified": 1615562729765,
+      "created": 1615562729765,
+      "name": "Customers",
       "description": "",
-      "scope": null,
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1615562729765,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_34e0a9ea83d949e78e8e43421dbe3987",
+      "parentId": null,
+      "modified": 1626351653302,
+      "created": 1615552497375,
+      "name": "Shopify API",
+      "description": "Shopify API collection created by ***Tudor Cojocaru***. It includes the most important endpoints for ***retrieving information*** about customers, products, orders, metafields etc. This collection only includes endpoints used with ***GET method.***",
+      "scope": "collection",
       "_type": "workspace"
     },
     {
-      "_id": "env_27449b026baf86354684705d039a08e1013ee885",
-      "parentId": "wrk_e29a65909d6e4b90a85684fbc7d9a40a",
-      "modified": 1611725997335,
-      "created": 1611725252793,
+      "_id": "req_d13d070073b74382a8e9754abaa83fc4",
+      "parentId": "fld_b9fc6dc6ec9f486d8fb34bba5cc59df1",
+      "modified": 1626343772487,
+      "created": 1617269831468,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/customers/search.json?query=tag:{% prompt 'Tag', 'Customer tag', '', '', false, true %}",
+      "name": "Retrieve a list of customers by tag",
+      "description": "Options:\n- ids\n\nRestrict results to customers specified by a comma-separated list of IDs.\n\n- since_id\n\nRestrict results to those after the specified ID.\n\n- created_at_min\n\nShow customers created after a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- created_at_max\n\nShow customers created before a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- updated_at_min\n\nShow customers last updated after a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- updated_at_max\n\nShow customers last updated before a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- limit\n\nThe maximum number of results to show.\n\n(default: 50, maximum: 250)\n\n- fields\n\nShow only certain fields, specified by a comma-separated list of field names.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page_info",
+          "value": "eyJxdWVyeSI6InRhZzpBY3RpdmUgU3Vic2NyaWJlciIsImxhc3RfaWQiOjM5MzI2MDg0NjI4ODIsImxhc3RfdmFsdWUiOjE2MTcwMDYxMTIwMDAsImRpcmVjdGlvbiI6Im5leHQifQ",
+          "description": "",
+          "id": "pair_097fa5af37304f8597c76e0ffefbd632",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "250",
+          "description": "",
+          "id": "pair_21fd9b0edc964b328ffe0b3bac527588"
+        }
+      ],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562139996.375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_422572f57bbd484d894946d3d7d42cc0",
+      "parentId": "fld_b9fc6dc6ec9f486d8fb34bba5cc59df1",
+      "modified": 1626343953893,
+      "created": 1615570651121,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/customers/{% prompt 'customer_id', 'Customer id', '', '', false, true %}/orders.json",
+      "name": "Retrieve all orders from a customer",
+      "description": "Retrieves all orders belonging to a customer. The query string parameters that are available to the Order resource are also available to this endpoint.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615561940549.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_d0642799eed04950958140671db09e13",
+      "parentId": "fld_b9fc6dc6ec9f486d8fb34bba5cc59df1",
+      "modified": 1626343747277,
+      "created": 1615571077377,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/customers/{% prompt 'customer_id', 'Customer id', '', '', false, true %}.json",
+      "name": "Retrieve a single customer by their ID",
+      "description": "Options:\n- fields\n\nShow only certain fields, specified by a comma-separated list of field names.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615561541655.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1cbb74be54d249c58efd0c3f94f19268",
+      "parentId": "fld_b9fc6dc6ec9f486d8fb34bba5cc59df1",
+      "modified": 1626349218654,
+      "created": 1615562738267,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/customers/count.json",
+      "name": "Count customers",
+      "description": "Retrieves the total number of customers",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615561441932.3125,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_11039046481341d18f8d80e051f885bf",
+      "parentId": "fld_b9fc6dc6ec9f486d8fb34bba5cc59df1",
+      "modified": 1626347263983,
+      "created": 1616411708410,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/customers/{% prompt 'customer_id', 'Customer id', '', '', false, true %}/metafields.json",
+      "name": "Retrieve metafields for specific customer",
+      "description": "Retrieves a list of metafields that belong to a customer",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615561342208.875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_28651d247299429dacaa4ad8f5bcce54",
+      "parentId": "fld_3747dd7abb614b57b761d4c9a432c4d6",
+      "modified": 1626350612868,
+      "created": 1615561142762,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/products.json",
+      "name": "Retrieve all products",
+      "description": "### Options: ###\n\n- **ids:**\n\nReturn only products specified by a comma-separated list of product IDs.\n\n- **limit:**\n\nReturn up to this many results per page.\n\n(default: 50, maximum: 250)\n\n- **since_id:**\n\nReturn only products after the specified ID.\n\n- **title:**\n\nReturn products by product title.\n\n- **vendor:**\n\nReturn products by product title.\n\n- **handle:**\n\nReturn only products specified by a comma-separated list of product handles.\n\n- **product_type:**\n\nReturn products by product type.\n\n- **status:**\n\nReturn only products specified by a comma-separated list of statuses.\n\n(default: any)\n\n   1. **active:** Return only active products.\n\n   2. **archived:** Return only archived products.\n\n   3. **draft:** Return only draft products.\n\n- **collection_id:**\n\nReturn products by product collection ID.\n\n- **created_at_min:**\n\nReturn products created after a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **created_at_max:**\n\nReturn products created before a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **updated_at_min:**\n\nReturn products last updated after a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **updated_at_max:**\n\nReturn products last updated before a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **published_at_min:**\n\nReturn products published after a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **published_at_max:**\n\nReturn products published before a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **published_status:**\n\nReturn products by their published status\n\n(default: any)\n\n 1. **published:** Return only published products.\n\n 2. **unpublished:** Return only unpublished products.\n\n 3. **any:** Return all products.\n\n- **fields**\n\nReturn only certain fields specified by a comma-separated list of field names.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_9eb1657347204ae98c70fc0179210db2"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615561142762,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_3747dd7abb614b57b761d4c9a432c4d6",
+      "parentId": "wrk_34e0a9ea83d949e78e8e43421dbe3987",
+      "modified": 1615561113583,
+      "created": 1615561113583,
+      "name": "Products",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1615561113583,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_db4e07d992234822be1a3a9034d15f19",
+      "parentId": "fld_3747dd7abb614b57b761d4c9a432c4d6",
+      "modified": 1626350859839,
+      "created": 1615571347552,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/products/{% prompt 'product_id', 'Product ID', '', '', false, true %}.json",
+      "name": "Retrieve a single product by ID",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_9eb1657347204ae98c70fc0179210db2"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615558997345.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_9142c8012c7d432ab542df822af65665",
+      "parentId": "fld_3747dd7abb614b57b761d4c9a432c4d6",
+      "modified": 1626350682880,
+      "created": 1624627374738,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/products.json",
+      "name": "Retrieve all products after the specified ID",
+      "description": "\n- **ids:**\n\nReturn only products specified by a comma-separated list of product IDs.\n\n- **limit:**\n\nReturn up to this many results per page.\n\n(default: 50, maximum: 250)\n\n- **since_id:**\n\nReturn only products after the specified ID.\n\n- **title:**\n\nReturn products by product title.\n\n- **vendor:**\n\nReturn products by product title.\n\n- **handle:**\n\nReturn only products specified by a comma-separated list of product handles.\n\n- **product_type:**\n\nReturn products by product type.\n\n- **status:**\n\nReturn only products specified by a comma-separated list of statuses.\n\n(default: any)\n\n   1. **active:** Return only active products.\n\n   2. **archived:** Return only archived products.\n\n   3. **draft:** Return only draft products.\n\n- **collection_id:**\n\nReturn products by product collection ID.\n\n- **created_at_min:**\n\nReturn products created after a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **created_at_max:**\n\nReturn products created before a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **updated_at_min:**\n\nReturn products last updated after a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **updated_at_max:**\n\nReturn products last updated before a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **published_at_min:**\n\nReturn products published after a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **published_at_max:**\n\nReturn products published before a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **published_status:**\n\nReturn products by their published status\n\n(default: any)\n\n 1. **published:** Return only published products.\n\n 2. **unpublished:** Return only unpublished products.\n\n 3. **any:** Return all products.\n\n- **fields**\n\nReturn only certain fields specified by a comma-separated list of field names.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "since_id",
+          "value": "{% prompt 'product_id', 'Product ID', '', '', false, true %}",
+          "description": "",
+          "id": "pair_70b9a73acffe4776a48e1231486cceb7"
+        }
+      ],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_9eb1657347204ae98c70fc0179210db2"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615558326902.8438,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_7e186667a4cc4f5f891cadf1f66347cb",
+      "parentId": "fld_3747dd7abb614b57b761d4c9a432c4d6",
+      "modified": 1624627018380,
+      "created": 1624626998479,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/products/{% prompt 'product_id', 'Product ID', '', '', false, true %}/variants.json",
+      "name": "Retrieve all variants for a product",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_9eb1657347204ae98c70fc0179210db2"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615558192814.3125,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_be2d95f2c70e4fa28ca8b8d1d6be8693",
+      "parentId": "fld_3747dd7abb614b57b761d4c9a432c4d6",
+      "modified": 1624626149186,
+      "created": 1624626017119,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/variants/{% prompt 'variant_id', 'Variant ID', '', '', false, true %}.json",
+      "name": "Retrieve a product variant by ID",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_9eb1657347204ae98c70fc0179210db2"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615557924637.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_aa3cef11931946da9983b8ceeefcabe4",
+      "parentId": "fld_3747dd7abb614b57b761d4c9a432c4d6",
+      "modified": 1626350772981,
+      "created": 1615571230554,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/products.json",
+      "name": "Retrieve a product by title",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "title",
+          "value": "{% prompt 'title', 'Product title', '', '', false, true %}",
+          "description": "",
+          "id": "pair_985075e772234663994bce6072995df8"
+        }
+      ],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_9eb1657347204ae98c70fc0179210db2"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615556851929,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c29c92febaab41a6882e739ff2449663",
+      "parentId": "fld_3747dd7abb614b57b761d4c9a432c4d6",
+      "modified": 1626350671448,
+      "created": 1624627535776,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/products/count.json",
+      "name": "Retrieve a count of all products",
+      "description": "\n- **ids:**\n\nReturn only products specified by a comma-separated list of product IDs.\n\n- **limit:**\n\nReturn up to this many results per page.\n\n(default: 50, maximum: 250)\n\n- **since_id:**\n\nReturn only products after the specified ID.\n\n- **title:**\n\nReturn products by product title.\n\n- **vendor:**\n\nReturn products by product title.\n\n- **handle:**\n\nReturn only products specified by a comma-separated list of product handles.\n\n- **product_type:**\n\nReturn products by product type.\n\n- **status:**\n\nReturn only products specified by a comma-separated list of statuses.\n\n(default: any)\n\n   1. **active:** Return only active products.\n\n   2. **archived:** Return only archived products.\n\n   3. **draft:** Return only draft products.\n\n- **collection_id:**\n\nReturn products by product collection ID.\n\n- **created_at_min:**\n\nReturn products created after a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **created_at_max:**\n\nReturn products created before a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **updated_at_min:**\n\nReturn products last updated after a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **updated_at_max:**\n\nReturn products last updated before a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **published_at_min:**\n\nReturn products published after a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **published_at_max:**\n\nReturn products published before a specified date. (format: 2014-04-25T16:15:47-04:00)\n\n- **published_status:**\n\nReturn products by their published status\n\n(default: any)\n\n 1. **published:** Return only published products.\n\n 2. **unpublished:** Return only unpublished products.\n\n 3. **any:** Return all products.\n\n- **fields**\n\nReturn only certain fields specified by a comma-separated list of field names.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_9eb1657347204ae98c70fc0179210db2"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615556851904,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1f8d5678ca3a429c81ea9e7142fdfe29",
+      "parentId": "fld_3747dd7abb614b57b761d4c9a432c4d6",
+      "modified": 1626351188428,
+      "created": 1624626906345,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/products/{% prompt 'product_id', 'Product ID', '', '', false, true %}/variants/count.json",
+      "name": "Retrieve a count of all variants for a product",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_9eb1657347204ae98c70fc0179210db2"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615556851891.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_7b988fb5d63048c6bcc6732e8df3e898",
+      "parentId": "fld_3747dd7abb614b57b761d4c9a432c4d6",
+      "modified": 1626347331344,
+      "created": 1626347132777,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/products/{% prompt 'product_id', 'Product ID', '', '', false, true %}/metafields.json",
+      "name": "Retrieve metafields for specific product",
+      "description": "Retrieves a list of metafields that belong to a Product resource",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615556851879,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_bf9a4e13a0bd48b88b4a03217126f952",
+      "parentId": "fld_a7d9fb97168e4b7cbff2823b219641bf",
+      "modified": 1626349634154,
+      "created": 1615552561096,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/orders.json",
+      "name": "Retrieve a list of orders",
+      "description": "- ***ids***\n\nRetrieve only orders specified by a comma-separated list of order IDs.\n\n- ***limit***\n\nThe maximum number of results to show on a page.\n\n(default: 50, maximum: 250)\n- ***since_id***\n\nShow orders after the specified ID.\n\n- ***created_at_min***\n\nShow orders created at or after date.\n\n- ***created_at_max***\n\nShow orders created at or before date.\n\n- ***updated_at_min***\n\nShow orders last updated at or after date.\n\n- ***updated_at_max***\n\nShow orders last updated at or before date.\n\n- ***processed_at_min***\n\nShow orders imported at or after date.\n\n- ***processed_at_max***\n\nShow orders imported at or before date.\n\n- ***attribution_app_id***\n\nShow orders attributed to a certain app, specified by the app ID. Set as current to show orders for the app currently consuming the API.\n\n- ***status***\n\nFilter orders by their status.\n\n(default: open)\n  1. ***open:*** Show only open orders.\n  2. ***closed:*** Show only closed orders.\n  3. ***cancelled:*** Show only canceled orders.\n  4. ***any:*** Show orders of any status, including archived orders.\n\n- ***financial_status***\n\nFilter orders by their financial status.\n\n   1. ***authorized:*** Show only authorized orders\n   2. ***pending:*** Show only pending orders\n   3. ***paid:*** Show only paid orders\n   4. ***partially_paid:*** Show only partially paid orders\n   5. ***refunded:*** Show only refunded orders\n   6. ***voided:*** Show only voided orders\n   7. ***partially_refunded:*** Show only partially refunded orders\n   8. ***any:*** Show orders of any financial status.\n   9. ***unpaid:*** Show authorized and partially paid orders.\n \n- ***fulfillment_status***\n\nFilter orders by their fulfillment status.\n\n(default: any)\n   1. ***shipped:*** Show orders that have been shipped. Returns orders with fulfillment_status of fulfilled.\n   2. ***partial:*** Show partially shipped orders.\n   3. ***unshipped:*** Show orders that have not yet been shipped. Returns orders with fulfillment_status of null.\n   4. ***any:*** Show orders of any fulfillment status.\n   5. ***unfulfilled:*** Returns orders with fulfillment_status of null or partial.\n\n- ***fields***\n\nRetrieve only certain fields, specified by a comma-separated list of fields names.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "status",
+          "value": "{% prompt 'status', 'Status of the order', 'any', '', false, true %}",
+          "description": "",
+          "id": "pair_6e8e4090adf0429984adbe6776243662"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-Shopify-Access-Token",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_b6e1c879d20a407da8261a0e67a1e2c7"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615552561096,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": false,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_a7d9fb97168e4b7cbff2823b219641bf",
+      "parentId": "wrk_34e0a9ea83d949e78e8e43421dbe3987",
+      "modified": 1626345062981,
+      "created": 1615552538629,
+      "name": "Orders",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1615558969844.5,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_78f440cdd1784516879fec95739e7b4a",
+      "parentId": "fld_a7d9fb97168e4b7cbff2823b219641bf",
+      "modified": 1626349671345,
+      "created": 1615553556247,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/orders.json",
+      "name": "Retrieve specific orders",
+      "description": "Retrieve only orders specified by a comma-separated list of order IDs.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "{% prompt 'ids', '', '', '', false, true %}",
+          "description": "",
+          "id": "pair_3ab2463eddf94ebbbdbbe8042680df8e",
+          "type": "text",
+          "multiline": false,
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "200",
+          "description": "",
+          "id": "pair_2bd291f835594e6980f87429a99481cd",
+          "disabled": true
+        }
+      ],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_94cbdea6c0f247169af166bf3488d5f4"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615552561046,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_036e3db6ea674b748b35dde22c900970",
+      "parentId": "fld_a7d9fb97168e4b7cbff2823b219641bf",
+      "modified": 1626349761580,
+      "created": 1622540705521,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/orders/{% prompt 'Order ID', 'Order ID', '', '', false, true %}.json",
+      "name": "Retrieves a specific order",
+      "description": "Retrieves an order by specifying the ID. All fields of an order are returned unless specific fields are named.\n\n\n- ***fields***\n\nRetrieve only certain fields, specified by a comma-separated list of fields names.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "200",
+          "description": "",
+          "id": "pair_2bd291f835594e6980f87429a99481cd",
+          "disabled": true
+        }
+      ],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_94cbdea6c0f247169af166bf3488d5f4"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1608553877549.375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": true,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_6f3daf787227435f9dc731e11fbdb7c8",
+      "parentId": "fld_a7d9fb97168e4b7cbff2823b219641bf",
+      "modified": 1626350365139,
+      "created": 1615561067759,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/orders/count.json",
+      "name": "Count orders",
+      "description": "### Options: ###\n\n\n- ***created_at_min***\n\nOrders created at or after date.\n\n- ***created_at_max***\n\nOrders created at or before date.\n\n- ***updated_at_min***\n\nOrders last updated at or after date.\n\n- ***updated_at_max***\n\nOrders last updated at or before date.\n\n\n- ***status***\n\nOrders of a given status.\n\n(default: open)\n  1. ***open:*** Show only open orders.\n  2. ***closed:*** Show only closed orders.\n  3. ***any:*** Show orders of any status, including archived orders.\n\n- ***financial_status***\n\nOrders of a given financial status.\n\n   1. ***authorized:*** authorized orders\n   2. ***pending:*** pending orders\n   3. ***paid:*** paid orders\n   4. ***refunded:*** refunded orders\n   5. ***voided:*** voided orders\n   6. ***any:*** orders of any financial status.\n \n- ***fulfillment_status***\n\nOrders of a given fulfillment status.\n\n(default: any)\n   1. ***shipped:*** Orders that have been shipped. Returns orders with fulfillment_status of fulfilled.\n   2. ***partial:*** Partially shipped orders.\n   3. ***unshipped:*** Orders that have not yet been shipped. Returns orders with fulfillment_status of null.\n   4. ***any:*** Orders of any fulfillment status.\n   5. ***unfulfilled:*** Orders with fulfillment_status of null or partial.\n",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "description": "",
+          "id": "pair_3ab2463eddf94ebbbdbbe8042680df8e",
+          "type": "text",
+          "multiline": false,
+          "disabled": true
+        }
+      ],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_94cbdea6c0f247169af166bf3488d5f4"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1601555194052.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_7411ba83a6e64c0aae726ba27014a40e",
+      "parentId": "fld_a7d9fb97168e4b7cbff2823b219641bf",
+      "modified": 1626347492017,
+      "created": 1626347427135,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/orders/{% prompt 'order_id', 'Order ID', '', '', false, true %}/metafields.json",
+      "name": "Retrieve metafields for specific order",
+      "description": "Retrieves a list of metafields that belong to an Order resource",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1601555194002.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c4472c7997e642639c10286141f1e26b",
+      "parentId": "fld_952832810229442c9b40761924dcf48f",
+      "modified": 1616352596385,
+      "created": 1615575835721,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{api_version }}/themes/{% prompt 'theme_id', 'Theme ID', '', '', false, true %}/assets.json?asset[key]=templates/collection.liquid",
+      "name": "collection.liquid",
+      "description": "The response should contain ***include 'scarab_collection'***",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562341001.4287,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_952832810229442c9b40761924dcf48f",
+      "parentId": "fld_48d751487f7a4f2285a0c78a7cc77937",
+      "modified": 1615575823568,
+      "created": 1615575823568,
+      "name": "Templates",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1615575823568,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_48d751487f7a4f2285a0c78a7cc77937",
+      "parentId": "wrk_34e0a9ea83d949e78e8e43421dbe3987",
+      "modified": 1626345132671,
+      "created": 1615574121617,
+      "name": "Assets",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1615557897975.25,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_1fe417bed93d48fca09ed5cdf618c6d9",
+      "parentId": "fld_952832810229442c9b40761924dcf48f",
+      "modified": 1616352643233,
+      "created": 1615576057178,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{api_version}}/themes/{% prompt 'theme_id', 'Theme ID', '', '', false, true %}/assets.json?asset[key]=templates/product.liquid",
+      "name": "product.liquid",
+      "description": "The response should contain ***include 'scarab_view'***",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562340222.3394,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b4b7dc41d83849d68a603fa7a990219f",
+      "parentId": "fld_952832810229442c9b40761924dcf48f",
+      "modified": 1616352271729,
+      "created": 1615576167842,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/themes/{% prompt 'theme_id', 'Theme ID', '', '', false, true %}/assets.json?asset[key]=templates/search.liquid",
+      "name": "search.liquid",
+      "description": "You need to have the theme ID\n\nThe response should contain ***include 'scarab_search'***",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562339832.7947,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": false,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b12aeaa4a5534641bb236e6479ed807e",
+      "parentId": "fld_4f98aa430882425380aefcd70b31cda7",
+      "modified": 1616352372032,
+      "created": 1615574298785,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/themes/{% prompt 'theme_id', 'Theme ID', '', '', false, true %}/assets.json?asset[key]=snippets/scarab_cart.liquid",
+      "name": "scarab_cart.liquid",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562538890.125,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_4f98aa430882425380aefcd70b31cda7",
+      "parentId": "fld_48d751487f7a4f2285a0c78a7cc77937",
+      "modified": 1615574261900,
+      "created": 1615574261900,
+      "name": "Snippets",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1615574261900,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_88aebc2530d240b7b670347d0288a124",
+      "parentId": "fld_4f98aa430882425380aefcd70b31cda7",
+      "modified": 1616352444828,
+      "created": 1615574619738,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/themes/{% prompt 'theme_id', 'Theme ID', '', '', false, true %}/assets.json?asset[key]=snippets/scarab_collection.liquid",
+      "name": "scarab_collection.liquid",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562439166.6875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e0b5f4614e9644669af8800b00282870",
+      "parentId": "fld_4f98aa430882425380aefcd70b31cda7",
+      "modified": 1616352556559,
+      "created": 1615574677451,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{api_version}}/themes/{% prompt 'theme_id', 'Theme ID', '', '', false, true %}/assets.json?asset[key]=snippets/scarab_go.liquid",
+      "name": "scarab_go.liquid",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562389304.9688,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c4c9c2cc63fb43c5b20867f872b77644",
+      "parentId": "fld_4f98aa430882425380aefcd70b31cda7",
+      "modified": 1616352712887,
+      "created": 1615574715982,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/themes/{% prompt 'theme_id', 'Theme ID', '', '', false, true %}/assets.json?asset[key]=snippets/scarab_purchase.liquid",
+      "name": "scarab_purchase.liquid",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562364374.1094,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_76a96929f7b94fb0a3225715638151ed",
+      "parentId": "fld_4f98aa430882425380aefcd70b31cda7",
+      "modified": 1616353027250,
+      "created": 1615575218611,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/themes/{% prompt 'theme_id', 'Theme ID', '', '', false, true %}/assets.json?asset[key]=snippets/scarab_queue.liquid",
+      "name": "scarab_queue.liquid",
+      "description": "<script type=\"text/javascript\" id=\"scarab-queue\">  \n  \nvar ScarabQueue = ScarabQueue || [];  \n(function(id) {  \n  if (document.getElementById(id)) return;  \n  var js = document.createElement('script'); js.id = id;  \n  js.src = '//cdn.scarabresearch.com/js/1C3D4DDBF55F8B63/scarab-v2.js';  \n  var fs = document.getElementsByTagName('script')[0];  \n  fs.parentNode.insertBefore(js, fs);  \n})('scarab-js-api');    \n</script>",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562351908.6797,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_2414dc096d0549178c3831bee4b00914",
+      "parentId": "fld_4f98aa430882425380aefcd70b31cda7",
+      "modified": 1616353038061,
+      "created": 1615575462176,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/themes/{% prompt 'theme_id', 'Theme ID', '', '', false, true %}/assets.json?asset[key]=snippets/scarab_search.liquid",
+      "name": "scarab_search.liquid",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562345675.9648,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_7be2b8c0012f4cfda6f55c6a1d377c9f",
+      "parentId": "fld_4f98aa430882425380aefcd70b31cda7",
+      "modified": 1616353049451,
+      "created": 1615575620807,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/themes/{% prompt 'theme_id', 'Theme ID', '', '', false, true %}/assets.json?asset[key]=snippets/scarab_view.liquid",
+      "name": "scarab_view.liquid",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562342559.6074,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1c225b0776474d619392b6255c7898b1",
+      "parentId": "fld_943218c2ec6b41f9ba605d53bf5b7365",
+      "modified": 1626796198010,
+      "created": 1616410961139,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/metafields.json",
+      "name": "Retrieve a list of metafields that belong to a resource",
+      "description": "Retrieves a list of metafields that belong to a resource.\n\nOptions:\n\n- since_id\n\nRestrict results to those after the specified ID.\n\n- created_at_min\n\nShow metafields created after a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- created_at_max\n\nShow metafields created before a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- updated_at_min\n\nShow metafields last updated after a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- updated_at_max\n\nShow metafields last updated before a specified date.\n(format: 2014-04-25T16:15:47-04:00)\n\n- namespace\n\nShow metafields with given namespace.\n\n- key\n\nShow metafields with given key.\n\n- type\n\nThe metafield's information type. See the full list of types at https://shopify.dev/apps/metafields/definitions/types\n\n- limit\n\nThe maximum number of results to show.\n\n(default: 50, maximum: 250)\n\n- fields\n\ncomma-separated list of fields to include in the response",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "namespace",
+          "value": "flexify",
+          "description": "",
+          "id": "pair_0b95a8e653744cfea77aba6a05a6b782",
+          "disabled": true
+        },
+        {
+          "name": "key",
+          "value": "collection",
+          "description": "",
+          "id": "pair_d59e24b592a149e099c1b1e99ff16a0f",
+          "disabled": true
+        }
+      ],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562638613.5625,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_943218c2ec6b41f9ba605d53bf5b7365",
+      "parentId": "wrk_34e0a9ea83d949e78e8e43421dbe3987",
+      "modified": 1626345044674,
+      "created": 1616515201076,
+      "name": "Metafields",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1615556826106,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_ad3ae20661c8472e9fbf554a4fd8e9df",
+      "parentId": "fld_943218c2ec6b41f9ba605d53bf5b7365",
+      "modified": 1626345628599,
+      "created": 1626344882823,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/metafields/count.json",
+      "name": "Count shop metafields",
+      "description": "Retrieves a count of a resource's metafields.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "namespace",
+          "value": "ls-rv-db03d2e3112905",
+          "description": "",
+          "id": "pair_3a45bbe7da4f4556b5f695ccadbffce9",
+          "disabled": false,
+          "type": "text",
+          "multiline": "text/plain"
+        },
+        {
+          "name": "key",
+          "value": "currenciesSwitchers",
+          "description": "",
+          "id": "pair_05bb85f0a927448198c3d76764c6b4c0",
+          "disabled": true
+        }
+      ],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562588751.8438,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1c257d47b94648f085c61c6054eed42c",
+      "parentId": "fld_943218c2ec6b41f9ba605d53bf5b7365",
+      "modified": 1626347568571,
+      "created": 1626345657224,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/products/{% prompt 'Product ID', 'Product ID', '', '', false, true %}/metafields/count.json",
+      "name": "Count metafields for specific product",
+      "description": "Retrieves a count of metafields that belong to a Product resource",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "namespace",
+          "value": "ls-rv-db03d2e3112905",
+          "description": "",
+          "id": "pair_3a45bbe7da4f4556b5f695ccadbffce9",
+          "disabled": true,
+          "type": "text",
+          "multiline": "text/plain"
+        },
+        {
+          "name": "key",
+          "value": "currenciesSwitchers",
+          "description": "",
+          "id": "pair_05bb85f0a927448198c3d76764c6b4c0",
+          "disabled": true
+        }
+      ],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562563820.9844,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_a1c1fbd059c548f3bfe7124f1f1a183f",
+      "parentId": "fld_943218c2ec6b41f9ba605d53bf5b7365",
+      "modified": 1626347546026,
+      "created": 1626346077478,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/orders/{% prompt 'Order ID', 'Order ID', '', '', false, true %}/metafields/count.json",
+      "name": "Count metafields for specific order",
+      "description": "Retrieves a count of metafields that belong to an Order resource",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "namespace",
+          "value": "ls-rv-db03d2e3112905",
+          "description": "",
+          "id": "pair_3a45bbe7da4f4556b5f695ccadbffce9",
+          "disabled": true,
+          "type": "text",
+          "multiline": "text/plain"
+        },
+        {
+          "name": "key",
+          "value": "currenciesSwitchers",
+          "description": "",
+          "id": "pair_05bb85f0a927448198c3d76764c6b4c0",
+          "disabled": true
+        }
+      ],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562551355.5547,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_0eae80daffd44a968e9bf2c58b8ab661",
+      "parentId": "fld_943218c2ec6b41f9ba605d53bf5b7365",
+      "modified": 1626346305765,
+      "created": 1626346212731,
+      "url": "{{protocol}}://{{hostname}}/admin/api/{{ _.api_version }}/customers/{% prompt 'Customer ID', 'Customer ID', '', '', false, true %}/metafields/count.json",
+      "name": "Count metafields for specific customer",
+      "description": "Retrieves a count of metafields that belong to a customer",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "namespace",
+          "value": "ls-rv-db03d2e3112905",
+          "description": "",
+          "id": "pair_3a45bbe7da4f4556b5f695ccadbffce9",
+          "disabled": true,
+          "type": "text",
+          "multiline": "text/plain"
+        },
+        {
+          "name": "key",
+          "value": "currenciesSwitchers",
+          "description": "",
+          "id": "pair_05bb85f0a927448198c3d76764c6b4c0",
+          "disabled": true
+        }
+      ],
+      "headers": [
+        {
+          "name": "{{ _.auth_header }}",
+          "value": "{{ _.token }}",
+          "description": "",
+          "id": "pair_8aafcee8e31544f59bbebb503a3bfb0a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615562545122.8398,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_d60532de5cb5468952d05463f89e2f310bd58668",
+      "parentId": "wrk_34e0a9ea83d949e78e8e43421dbe3987",
+      "modified": 1624627164235,
+      "created": 1615552497960,
       "name": "Base Environment",
-      "data": { "hostname": "https://example.myshopify.com", "token": "..." },
-      "dataPropertyOrder": { "&": ["hostname", "token"] },
+      "data": {
+        "protocol": "https",
+        "auth_header": "X-Shopify-Access-Token",
+        "api_version": "2021-04"
+      },
+      "dataPropertyOrder": { "&": ["protocol", "auth_header", "api_version"] },
       "color": null,
       "isPrivate": false,
-      "metaSortKey": 1611725252793,
+      "metaSortKey": 1615552497960,
       "_type": "environment"
     },
     {
-      "_id": "jar_27449b026baf86354684705d039a08e1013ee885",
-      "parentId": "wrk_e29a65909d6e4b90a85684fbc7d9a40a",
-      "modified": 1611725252801,
-      "created": 1611725252801,
+      "_id": "jar_d60532de5cb5468952d05463f89e2f310bd58668",
+      "parentId": "wrk_34e0a9ea83d949e78e8e43421dbe3987",
+      "modified": 1619108400244,
+      "created": 1615552497969,
       "name": "Default Jar",
       "cookies": [],
       "_type": "cookie_jar"
     },
     {
-      "_id": "spc_15379888965440d187e24be25ce798ce",
-      "parentId": "wrk_e29a65909d6e4b90a85684fbc7d9a40a",
-      "modified": 1611725252719,
-      "created": 1611725252719,
-      "fileName": "Shopify",
+      "_id": "spc_c5922eaac87b4835816cca735a3a1378",
+      "parentId": "wrk_34e0a9ea83d949e78e8e43421dbe3987",
+      "modified": 1615552497380,
+      "created": 1615552497380,
+      "fileName": "Shopify API",
       "contents": "",
       "contentType": "yaml",
       "_type": "api_spec"
